@@ -1,5 +1,4 @@
 const reveals = document.querySelectorAll('.reveal');
-const yearNode = document.getElementById('year');
 const form = document.getElementById('contact-form');
 const formNote = document.getElementById('form-note');
 const nav = document.querySelector('.nav');
@@ -7,6 +6,7 @@ const navToggle = document.querySelector('.nav-toggle');
 const navBackdrop = document.querySelector('.nav-backdrop');
 const navClose = document.querySelector('.nav-close');
 const navLinks = document.querySelectorAll('.nav a');
+const themeToggle = document.querySelector('.theme-toggle');
 const langParam = new URLSearchParams(window.location.search).get('lang') || 'en';
 
 const translations = {
@@ -330,6 +330,26 @@ const translations = {
 
 const getNestedValue = (source, path) => path.split('.').reduce((current, key) => current?.[key], source);
 
+const getInitialTheme = () => {
+  try {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      return savedTheme;
+    }
+  } catch (error) {
+    return 'dark';
+  }
+
+  return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+};
+
+const applyTheme = (theme) => {
+  document.body.dataset.theme = theme;
+  const isLight = theme === 'light';
+  themeToggle?.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+  themeToggle?.setAttribute('aria-pressed', String(isLight));
+};
+
 const applyTranslations = () => {
   const lang = translations[langParam] ? langParam : 'en';
   document.documentElement.lang = lang;
@@ -350,6 +370,7 @@ const applyTranslations = () => {
     footerText.innerHTML = translations[lang].footer.text.replace('{year}', `<span id="year"></span>`);
   }
 
+  const yearNode = document.getElementById('year');
   if (yearNode) {
     yearNode.textContent = new Date().getFullYear();
   }
@@ -381,8 +402,19 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.16 }
 );
 
+applyTheme(getInitialTheme());
 applyTranslations();
 reveals.forEach((element) => revealObserver.observe(element));
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+  applyTheme(nextTheme);
+  try {
+    localStorage.setItem('portfolio-theme', nextTheme);
+  } catch (error) {
+    return;
+  }
+});
 
 navToggle?.addEventListener('click', toggleNav);
 navClose?.addEventListener('click', closeNav);
