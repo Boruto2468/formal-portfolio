@@ -578,6 +578,12 @@ p {
   border-radius: 24px;
   padding: 24px;
   box-shadow: var(--shadow);
+  transition: color 220ms ease, transform 240ms ease;
+}
+
+.case-card:hover,
+.case-card:focus-within {
+  transform: translateY(-2px);
 }
 
 .case-grid {
@@ -666,7 +672,6 @@ textarea {
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (max-width: 960px) {
