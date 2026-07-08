@@ -82,7 +82,7 @@ const translations = {
       chinese: '中文'
     },
     contact: {
-      eyebrow: 'Contact',
+      eyebrow: 'Let\'s work together',
       heading: 'Start with a structured conversation about your next initiative.',
       description: 'Whether you need a new platform, an AI-enabled workflow, or a more reliable operating layer, I can help you assess the right path.',
       link: 'Reach out to me'
@@ -161,7 +161,7 @@ const translations = {
       chinese: '中国語'
     },
     contact: {
-      eyebrow: 'お問い合わせ',
+      eyebrow: '一緒に取り組みましょう',
       heading: '次の取り組みについて、構造化された会話から始めましょう。',
       description: '新しいプラットフォーム、AI対応のワークフロー、より信頼性の高い運用基盤が必要な場合でも、適切な道筋を一緒に整理できます。',
       link: 'お問い合わせする'
@@ -240,7 +240,7 @@ const translations = {
       chinese: 'Chinois'
     },
     contact: {
-      eyebrow: 'Contact',
+      eyebrow: 'Travaillons ensemble',
       heading: 'Commencez par une conversation structurée autour de votre prochaine initiative.',
       description: 'Que vous ayez besoin d’une nouvelle plateforme, d’un workflow alimenté par l’IA ou d’une couche opérationnelle plus fiable, je peux vous aider à définir la bonne voie.',
       link: 'Prenez contact avec moi'
@@ -319,7 +319,7 @@ const translations = {
       chinese: '中文'
     },
     contact: {
-      eyebrow: '联系',
+      eyebrow: '让我们一起工作',
       heading: '从一次围绕下一项计划的结构化对话开始。',
       description: '无论您需要新平台、AI驱动工作流还是更可靠的运营层，我都可以帮助您评估合适的路径。',
       link: '联系我'
