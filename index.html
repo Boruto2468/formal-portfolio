@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#eee6d8">
+  <meta name="description" content="Jotham (Frank) Arimoro is a creative frontend and full-stack developer building thoughtful web experiences. Explore Yukoto, Northstar Academy, and the work behind them.">
+  <meta name="author" content="Jotham (Frank) Arimoro">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jotham Arimoro — Creative Developer">
+  <meta property="og:description" content="Code with structure. Design with character. A manga-editorial developer portfolio.">
+  <meta property="og:image" content="assets/hero-manga.webp">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <title>Jotham Arimoro — Creative Developer / 創る</title>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  <div class="site-shell" id="top">
+    <header class="site-header" id="header">
+      <a class="identity" href="#top" aria-label="Jotham Arimoro — home">
+        <img class="identity-mark" src="assets/logo-mark.webp" width="46" height="46" alt="" decoding="async">
+        <span class="identity-text"><strong>JOTHAM ARIMORO</strong><small data-i18n="identitySubtitle">CREATIVE DEVELOPER / 開発者</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#process" data-i18n="navProcess">Process</a>
+        <a href="#expertise" data-i18n="navExpertise">Expertise</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Language">
+          <button id="langEN" class="is-active" type="button" aria-pressed="true">EN</button>
+          <button id="langJA" type="button" aria-pressed="false" lang="ja">日本語</button>
+        </div>
+        <button class="icon-button theme-button" id="themeButton" type="button" aria-label="Switch to ink theme" title="Switch theme"><span id="themeIcon" aria-hidden="true">◐</span></button>
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+        <a href="#work" data-i18n="navWork">Work</a><a href="#process" data-i18n="navProcess">Process</a><a href="#expertise" data-i18n="navExpertise">Expertise</a><a href="#about" data-i18n="navAbout">About</a><a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="edition-strip"><span>PORTFOLIO / ISSUE 01</span><span class="edition-middle">作品集 <i aria-hidden="true"></i> <span data-i18n="editionLabel">AN EXERCISE IN CRAFT & CODE</span></span><span>2026 — LAGOS / WORLDWIDE</span></div>
+      <section class="hero panel" id="home" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-square"></span><span data-i18n="heroEyebrow">FRONTEND ENGINEER · CREATIVE DEVELOPER</span><span class="eyebrow-line"></span><span lang="ja">はじめまして</span></div>
+          <h1 id="heroTitle"><span data-i18n="heroLine1">I build the</span><br><em data-i18n="heroLine2">thoughtful</em><br><span data-i18n="heroLine3">side of the web.</span></h1>
+          <p class="hero-lead" data-i18n="heroIntro">I'm Jotham (Frank) Arimoro. I turn complicated ideas into clear, usable digital experiences—where solid engineering meets a slightly unconventional imagination.</p>
+          <div class="hero-buttons"><a class="btn btn-red" href="#work"><span data-i18n="viewWork">Explore my work</span><span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="mailto:frankarimoro@gmail.com?subject=Let's%20build%20something"><span data-i18n="getInTouch">Let's talk</span><span aria-hidden="true">↗</span></a></div>
+          <div class="hero-signature"><span class="signature-dot"></span><span data-i18n="heroSignature">Building for people, not just screens.</span><span class="signature-script" lang="ja">余白を大切に。</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Manga-style illustration of a Black creative developer with independently animated inked hair and headphones against an ink-red rising sun">
+          <div class="hero-artwork">
+            <svg class="hero-illustration" viewBox="0 0 595 370" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="heroArtTitle heroArtDesc" xmlns="http://www.w3.org/2000/svg">
+              <title id="heroArtTitle">Manga portrait of a creative developer</title>
+              <desc id="heroArtDesc">Original illustrated character wearing headphones, with cherry blossoms and a red sun. His inked hair gently flows in a breeze.</desc>
+              <defs>
+                <filter id="hair-ink-ripple" x="-5%" y="-9%" width="110%" height="118%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.015 0.038" numOctaves="1" seed="8" result="breeze">
+                    <animate attributeName="baseFrequency" dur="6.7s" values="0.015 0.038;0.020 0.041;0.017 0.040;0.015 0.038" repeatCount="indefinite" />
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" in2="breeze" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+              </defs>
+              <!-- Artwork is preserved as hand-inked raster layers, positioned by an SVG animation rig. -->
+              <image href="assets/hero-without-loose-hair.webp" x="0" y="0" width="595" height="370" />
+              <g class="hair-rig hair-rig-back" filter="url(#hair-ink-ripple)">
+                <image href="assets/hair-back.png" x="0" y="0" width="595" height="370" />
+              </g>
+              <g class="hair-rig hair-rig-crown" filter="url(#hair-ink-ripple)">
+                <image href="assets/hair-crown.png" x="0" y="0" width="595" height="370" />
+              </g>
+              <g class="hair-rig hair-rig-fringe" filter="url(#hair-ink-ripple)">
+                <image href="assets/hair-fringe.png" x="0" y="0" width="595" height="370" />
+              </g>
+            </svg>
+          </div>
+          <div class="art-caption"><span>FIG. 01 / THE MAKER</span><span lang="ja">創造と実装</span></div>
+          <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        </div>
+      </section>
+      <div class="hero-bottom panel"><div><span class="tiny-label" data-i18n="basedIn">CURRENTLY BASED IN</span><strong>LAGOS, NIGERIA <span class="tiny-accent">↗</span></strong></div><div><span class="tiny-label" data-i18n="primaryCraft">PRIMARY CRAFT</span><strong>REACT · NEXT.JS · TYPESCRIPT</strong></div><div><span class="tiny-label" data-i18n="beyondScreen">BEYOND THE SCREEN</span><strong data-i18n="beyondText">LANGUAGES · ANIME · EDUCATION</strong></div><div class="hero-scroll"><span data-i18n="scrollLabel">SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></div></div>
+
+      <section class="section work-section" id="work" aria-labelledby="workHeading">
+        <div class="section-heading"><div><div class="eyebrow tiny"><span class="red-square"></span> CHAPTER 01 / <span lang="ja">作品</span></div><h2 id="workHeading" data-i18n="workHeading">Work worth opening.</h2><p data-i18n="workIntro">Not just pretty screenshots. Real projects, real product decisions, and the messy work in between.</p></div><span class="section-counter">01 <span>/ 04</span></span></div>
+        <div class="projects-grid">
+          <article class="project-card panel reveal" aria-labelledby="yukoto-title">
+            <div class="project-visual yukoto-preview" role="img" aria-label="Illustrative interface concept representing Yukoto's Chinese and Japanese language-learning experience. Not an actual screenshot.">
+              <div class="preview-window"><div class="preview-top"><span class="mini-logo">言<span>語</span></span><span>YUKOTO</span><span class="dots" aria-hidden="true">● ● ●</span></div><div class="yukoto-view"><div class="yukoto-copy"><small>LANGUAGE STUDY / 言葉</small><div class="yukoto-big">ことばを<br><b>つなぐ。</b></div><div class="yukoto-rule"></div><span>日本語 & 中文</span></div><div class="hanzi-tile"><span class="hanzi-dust">╱ ╲</span><strong>語</strong><small>yǔ · language</small></div></div><div class="preview-bottom"><span>LEARN</span><span>READ</span><span>SPEAK</span><span>REVIEW</span></div></div>
+              <div class="preview-badge">01 / 言語</div>
+            </div>
+            <div class="project-info"><div class="project-topline"><span class="tiny-label">INDEPENDENT PRODUCT · 2026</span><span class="project-arrow">↗</span></div><h3 id="yukoto-title">Yukoto <span lang="ja">言語</span></h3><p data-i18n="yukotoDescription">An evolving Chinese and Japanese learning platform with guided lessons, reading, speaking practice, and progress-aware experiences.</p><div class="tag-row"><span>JavaScript</span><span>Cloudflare</span><span>Firebase</span><span>APIs</span></div><div class="project-actions"><a href="https://yukoto.download" target="_blank" rel="noopener noreferrer"><span data-i18n="visitProject">Visit live project</span> ↗</a><button type="button" class="text-button project-detail" data-project="yukoto"><span data-i18n="readStory">Read the story</span> →</button></div></div>
+          </article>
+          <article class="project-card panel reveal" aria-labelledby="northstar-title">
+            <div class="project-visual northstar-preview" role="img" aria-label="Illustrative interface concept representing Northstar Academy's mathematics and biology learning experience. Not an actual screenshot.">
+              <div class="north-window"><div class="north-top"><span class="north-mark">✳</span><span>NORTHSTAR <small>ACADEMY</small></span><span class="north-ghost">MY LEARNING</span></div><div class="north-inner"><div class="north-copy"><small>YEAR 10 / MATHEMATICS</small><div class="north-head">Make sense<br>of the <em>complex.</em></div><div class="north-line"></div><div class="north-pills"><span>SURDS</span><span>ALGEBRA</span></div></div><div class="north-math"><span>THE PROBLEM</span><strong>√72</strong><div>6√2 <span>✓</span></div><small>STEP 03 / COMPLETE</small></div></div><div class="north-bottom"><span>LESSONS</span><span>EXERCISES</span><span>PROGRESS</span></div></div>
+              <div class="preview-badge">02 / 学習</div>
+            </div>
+            <div class="project-info"><div class="project-topline"><span class="tiny-label">EDUCATION PLATFORM · 2026</span><span class="project-arrow">↗</span></div><h3 id="northstar-title">Northstar <span lang="ja">学習</span></h3><p data-i18n="northstarDescription">A structured learning application for Maths and Biology, built around lessons, interactive practice, and thoughtful question feedback.</p><div class="tag-row"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Testing</span></div><div class="project-actions"><a href="https://northstar-academy-rosy.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="visitProject">Visit live project</span> ↗</a><button type="button" class="text-button project-detail" data-project="northstar"><span data-i18n="readStory">Read the story</span> →</button></div></div>
+          </article>
+        </div>
+        <div class="work-footnote"><span class="footnote-mark">✳</span><p data-i18n="illustrationNote">Project artwork is an editorial interpretation of each product—not a captured screenshot. Open the live sites to see the interfaces in action.</p><a class="underlined-link" href="https://github.com/boruto2468" target="_blank" rel="noopener noreferrer"><span data-i18n="browseGithub">Browse GitHub</span> ↗</a></div>
+      </section>
+
+      <section class="section process-section" id="process" aria-labelledby="processHeading">
+        <div class="process-title"><div class="eyebrow tiny"><span class="red-square"></span> CHAPTER 02 / <span lang="ja">制作ノート</span></div><h2 id="processHeading" data-i18n="processHeading">The work between<br><em>the frames.</em></h2><p data-i18n="processIntro">The parts that rarely make the screenshot: debugging, trade-offs, and making the experience reliable.</p></div>
+        <div class="process-grid">
+          <article class="process-card reveal"><span class="process-index">CASE 01 <span>／</span> 言</span><div class="process-symbol">↗</div><h3 data-i18n="caseOneTitle">When two languages collided.</h3><p data-i18n="caseOneText">While developing Yukoto, language navigation could bounce Japanese learners back to the Chinese experience. That meant tracing route handling, shared state, and the flow between learning paths.</p><div class="process-footer"><span>ROUTING / STATE / UX</span><span>01—</span></div></article>
+          <article class="process-card reveal"><span class="process-index">CASE 02 <span>／</span> 学</span><div class="process-symbol">∑</div><h3 data-i18n="caseTwoTitle">A question is more than its answer.</h3><p data-i18n="caseTwoText">For Northstar, mismatched generated prompts and answers exposed the need to keep each question's parameters, solution, and feedback together—and test the resulting variations.</p><div class="process-footer"><span>DATA MODEL / TESTING</span><span>02—</span></div></article>
+          <article class="process-card reveal"><span class="process-index">CASE 03 <span>／</span> 美</span><div class="process-symbol">⌘</div><h3 data-i18n="caseThreeTitle">Making design survive reality.</h3><p data-i18n="caseThreeText">Pixel-perfect desktop designs mean little if they fail on smaller screens. I work through layout, touch targets, performance, and motion until the interface behaves well—not just looks good.</p><div class="process-footer"><span>RESPONSIVE / PERFORMANCE</span><span>03—</span></div></article>
+        </div>
+        <div class="process-quote"><span lang="ja">「使えることこそ、美しさ。」</span><p data-i18n="quoteText">Good design earns its place by working.</p><span class="quote-circle" aria-hidden="true"></span></div>
+      </section>
+
+      <section class="section expertise-section" id="expertise" aria-labelledby="expertiseHeading">
+        <div class="section-heading"><div><div class="eyebrow tiny"><span class="red-square"></span> CHAPTER 03 / <span lang="ja">技術と言語</span></div><h2 id="expertiseHeading" data-i18n="expertiseHeading">Tools, tongue & taste.</h2><p data-i18n="expertiseIntro">A practical toolkit, shaped by a curiosity that goes well beyond the browser.</p></div><span class="section-counter">03 <span>/ 04</span></span></div>
+        <div class="expertise-grid">
+          <div class="expertise-panel panel"><div class="panel-heading"><span>01 / STACK</span><span lang="ja">技術</span></div><h3 data-i18n="stackHeading">Things I build with.</h3><div class="skill-cluster"><h4 data-i18n="skillCore">CORE DEVELOPMENT</h4><div class="skill-tags"><span>React</span><span>Next.js</span><span>TypeScript</span><span>JavaScript</span><span>HTML / CSS</span><span>Tailwind CSS</span></div></div><div class="skill-cluster"><h4 data-i18n="skillBackend">BACKEND & INTEGRATIONS</h4><div class="skill-tags"><span>Node.js / Express</span><span>REST APIs</span><span>Firebase</span><span>MongoDB</span><span>TypeORM</span><span>Cloudflare Workers</span></div></div><div class="skill-cluster"><h4 data-i18n="skillCraft">CRAFT & WORKFLOW</h4><div class="skill-tags"><span>UI / UX</span><span>Accessibility</span><span>Git</span><span>Debugging</span><span>Responsive UI</span><span>Testing</span><span>Deployment</span></div></div><div class="panel-stamp" aria-hidden="true">技</div></div>
+          <div class="expertise-panel language-panel panel"><div class="panel-heading"><span>02 / LANGUAGE</span><span lang="ja">言語</span></div><h3 data-i18n="languageHeading">More than one way to think.</h3><div class="language-list"><div><span>EN <strong>English</strong></span><span data-i18n="native">Native</span></div><div><span>JA <strong>日本語</strong></span><span data-i18n="fluent">Fluent</span></div><div><span>FR <strong>Français</strong></span><span data-i18n="intermediate">Intermediate</span></div><div><span>ZH <strong>中文</strong></span><span data-i18n="intermediate">Intermediate</span></div></div><div class="language-note"><span lang="ja">言葉は世界を広げる。</span><p data-i18n="languageNote">Language changes how I understand people, and that changes how I build for them.</p></div></div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="aboutHeading"><div class="about-visual panel"><div class="about-red-circle"></div><div class="about-number">余<br>白</div><div class="about-mountain"><img src="assets/mountain.svg" loading="lazy" alt="Decorative ink-style mountain and vermilion sun illustration"></div><span class="about-caption">FIG. 02 — SPACE TO THINK</span><div class="about-small">間<br>を<br>大<br>切<br>に</div></div><div class="about-copy panel"><div class="eyebrow tiny"><span class="red-square"></span> CHAPTER 04 / <span lang="ja">自己紹介</span></div><h2 id="aboutHeading" data-i18n="aboutHeading">There's a human<br><em>behind the pixels.</em></h2><p data-i18n="aboutTextOne">I'm a Nigerian-Japanese developer who cares about how things work and how they feel. I enjoy bringing structure to complicated problems while making space for creativity.</p><p data-i18n="aboutTextTwo">Languages, teaching, anime, and gaming have all shaped the way I approach interactive products. They're not separate from engineering; they're part of why I pay attention to stories, systems, and the people using them.</p><div class="interests"><span data-i18n="interest1">Japanese culture</span><span data-i18n="interest2">Language learning</span><span data-i18n="interest3">Anime & manga</span><span data-i18n="interest4">Games</span><span data-i18n="interest5">Teaching</span></div><a href="assets/Jotham_Arimoro_CV.docx" download="Jotham_Arimoro_CV.docx" class="underlined-link"><span data-i18n="downloadCv">Download my CV</span> <span aria-hidden="true">↓</span></a></div></section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contactHeading"><div class="contact-inner"><div class="contact-heading"><div class="eyebrow tiny"><span class="red-square"></span> THE NEXT CHAPTER / <span lang="ja">次の一歩</span></div><h2 id="contactHeading" data-i18n="contactHeading">Let's make<br><em>something matter.</em></h2><p data-i18n="contactText">Whether it's a product, a collaboration, or a challenging problem worth solving—I'd love to hear about it.</p><div class="contact-cta"><a class="btn btn-light" href="mailto:frankarimoro@gmail.com?subject=Hello%20Jotham"><span data-i18n="emailMe">Send an email</span> <span aria-hidden="true">↗</span></a><button type="button" id="copyEmail" class="btn btn-ink-outline"><span data-i18n="copyEmail">Copy email</span> <span aria-hidden="true">⧉</span></button></div><p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p></div><div class="contact-seal"><span lang="ja">一期<br>一会</span><small>ONE MEETING.<br>ONE MOMENT.</small></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-brand"><img class="footer-mark" src="assets/logo-mark.webp" width="39" height="39" alt="" loading="lazy"><span>JOTHAM (FRANK) ARIMORO <small data-i18n="footerCredit">DESIGNED & BUILT WITH CARE</small></span></div><div class="footer-links"><a href="https://github.com/boruto2468" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="mailto:frankarimoro@gmail.com">EMAIL ↗</a><a href="#top" data-i18n="backTop">BACK TO TOP ↑</a></div><span class="footer-year">© <span id="year">2026</span> / <span lang="ja">おわり</span></span></footer>
+  </div>
+  <dialog id="projectDialog" aria-labelledby="dialogTitle"><div class="dialog-content"><div class="dialog-head"><span class="tiny-label" id="dialogKicker"></span><button type="button" class="dialog-close" id="closeDialog" aria-label="Close project details">✕</button></div><h2 id="dialogTitle"></h2><p id="dialogIntro"></p><div class="dialog-sections"><div><h3 id="dialogChallengeLabel">The challenge</h3><p id="dialogChallenge"></p></div><div><h3 id="dialogWorkLabel">My contribution</h3><p id="dialogWork"></p></div><div><h3 id="dialogStackLabel">Tools & technologies</h3><p id="dialogStack"></p></div></div><a id="dialogVisit" class="btn btn-red" href="#" target="_blank" rel="noopener noreferrer">Visit live site ↗</a></div></dialog>
+</body>
+</html>

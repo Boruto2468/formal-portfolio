@@ -1,0 +1,30 @@
+{
+  "name": "Jotham Arimoro \u2014 Creative Developer",
+  "short_name": "Arimoro",
+  "description": "The creative developer portfolio of Jotham (Frank) Arimoro.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eee6d8",
+  "theme_color": "#eee6d8",
+  "icons": [
+    {
+      "src": "./assets/logo-mark.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
