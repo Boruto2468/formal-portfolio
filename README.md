@@ -2,12 +2,12 @@
 
 A complete, static, responsive portfolio. **No npm install or build step is required.** The entire application is authored in `index.html`, `styles.css`, and `app.js`, with local artwork assets.
 
-## Open locally
+<!-- ## Open locally
 
 - Open `index.html` in your browser. All navigation, language/theme switches, project case-study dialogs, and illustration animations work even from a local file.
 - For a production-like local server: `python -m http.server 8080`, then visit `http://localhost:8080`.
 - The Japanese/English copy and paper/ink theme selections persist in local storage when the browser allows it.
-- All decorative motion respects `prefers-reduced-motion`.
+- All decorative motion respects `prefers-reduced-motion`. -->
 
 ## Publish
 
@@ -17,7 +17,7 @@ A complete, static, responsive portfolio. **No npm install or build step is requ
 
 **GitHub Pages:** Push the contents of this folder to a repository and configure Pages to publish from the root directory.
 
-## Personalization
+<!-- ## Personalization
 
 - `index.html`: semantic page sections, project links, contact email, and technical stack.
 - `app.js`: all English/Japanese translation strings and case-study descriptions.
@@ -35,7 +35,7 @@ A complete, static, responsive portfolio. **No npm install or build step is requ
 - **When deploying a change, update `CACHE` in `sw.js`** to invalidate the older cached shell.
 - No third-party JS SDKs, embedded tracking scripts, databases, API keys, or backend services are included. Fonts are loaded from Google Fonts when online, with system fallbacks.
 - The mail contact action uses `mailto:`; copying email uses the Clipboard API with a manual-copy fallback.
-- Project links are external and open in a new tab with `rel="noopener noreferrer"`.
+- Project links are external and open in a new tab with `rel="noopener noreferrer"`. -->
 
 ## Accessibility and QA
 
