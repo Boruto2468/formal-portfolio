@@ -1,0 +1,85 @@
+/* Functional ink interactions. All layout styles remain in globals.css. */
+.sketch-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 75;
+  pointer-events: none !important;
+  touch-action: none;
+  contain: strict;
+}
+.sketch-canvas[hidden] { display: none; }
+
+/* The canvas is the only drawing overlay. Icons are lightweight native SVG cursors. */
+@media (pointer: fine) and (hover: hover) {
+  html.cursor-fx-enabled,
+  html.cursor-fx-enabled body,
+  html.cursor-fx-enabled body * {
+    cursor: url('/cursors/pencil.svg') 18 32, crosshair !important;
+  }
+  html.cursor-fx-enabled a,
+  html.cursor-fx-enabled button,
+  html.cursor-fx-enabled [role="button"] {
+    cursor: url('/cursors/brush.svg') 18 32, pointer !important;
+  }
+  html.cursor-fx-enabled.is-sketching {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+.ink-target { position: relative; isolation: isolate; }
+.ink-effect-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.ink-blot {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  border-radius: 54% 46% 41% 59% / 55% 43% 57% 45%;
+  filter: blur(.6px);
+  transform: translate(-50%, -50%) scale(.25) rotate(-8deg);
+  animation: ink-blot-pop 580ms cubic-bezier(.15,.7,.2,1) both;
+  will-change: transform, opacity;
+}
+@keyframes ink-blot-pop {
+  0% { opacity: .28; transform: translate(-50%, -50%) scale(.25) rotate(-8deg); filter: blur(0px); }
+  42% { opacity: .24; transform: translate(-50%, -50%) scale(1.05) rotate(6deg); filter: blur(1px); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.75) rotate(13deg); filter: blur(5px); }
+}
+.ink-hold {
+  display: block;
+  position: absolute;
+  background: #171615;
+  opacity: .19;
+  border-radius: 53% 47% 55% 45% / 49% 50% 50% 51%;
+  filter: blur(0);
+  transform: translate(-50%, -50%) scale(.005);
+  transition: transform 1150ms cubic-bezier(.21,.56,.27,1), opacity 280ms ease, filter 400ms ease;
+  will-change: transform, opacity;
+}
+.ink-hold.is-spreading {
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(1.5px);
+}
+.ink-hold.is-filled { opacity: .25; filter: blur(2.5px); }
+.ink-hold.is-receding {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.86);
+  filter: blur(8px);
+  transition: transform 280ms ease, opacity 280ms ease, filter 280ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sketch-canvas { display: none !important; }
+  .ink-effect-layer { display: none !important; }
+  html, html *, html.cursor-fx-enabled, html.cursor-fx-enabled * { cursor: auto !important; }
+  html a, html button { cursor: pointer !important; }
+}
