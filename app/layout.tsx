@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './effects.css';
+import './creative-mode.css';
 
 export const metadata: Metadata = {
   title: 'Jotham Frank Arimoro — Developer Portfolio',
