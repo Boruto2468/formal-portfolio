@@ -2,13 +2,10 @@
    Creative portfolio styles are served as an entirely separate document. */
 .nav-logo { user-select:none; -webkit-user-select:none; }
 .secret-entrance {
-  flex:1 0 100%;
-  border-top:1px solid rgba(24,22,19,.12);
-  min-height:56px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:17px 8px 0;
+  padding:8px;
   text-align:center;
 }
 .secret-hint,.secret-unlocked {
@@ -78,6 +75,6 @@
   .creative-transition,.creative-transition-progress span { animation:none!important; }
 }
 @media(max-width:590px) {
-  .secret-entrance { min-height:62px; padding:14px 4px 0; }
+  .secret-entrance { padding:0; }
   .secret-hint { font-size:10px; max-width:100%; letter-spacing:0; }
 }

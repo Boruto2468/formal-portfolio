@@ -28,7 +28,7 @@ npm run build         # production Next.js build
 There are two entry points in the formal site's footer/header:
 
 1. **Triple-click/tap “Frank.dev”** in the header within two seconds. Ordinary single clicks still scroll to the top.
-2. **Use the discreet footer sentence**: “There's more to this portfolio than meets the eye.” The letters fade away in order after three seconds; the hit area is *actually disabled* for the next ~five seconds, then letters reappear in reverse order. It pauses while hovered/focused. On reduced-motion systems the hint stays visible and interactive.
+2. **Use the discreet footer sentence**, positioned between the portfolio name and copyright links: “There's more to this portfolio than meets the eye.” The letters fade away in order after three seconds; the hit area is *actually disabled* for the next ~five seconds, then letters reappear in reverse order. It pauses while hovered/focused. On reduced-motion systems the hint stays visible and interactive.
 
 Either interaction unlocks the feature and enters creative mode. Thereafter the footer shows a small **“Enter creative mode”** switch. The unlock is stored on the current device in `localStorage` (not an account).
 
