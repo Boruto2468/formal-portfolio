@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 
 const HINT = "There's more to this portfolio than meets the eye.";
+const HINT_REVEAL_DURATION_MS = 650;
+const INK_FILL_PAUSE_MS = 1000;
 // Group letters into unbreakable words so the Easter egg wraps cleanly on phones.
 let hintOffset = 0;
 const HINT_WORDS = HINT.split(' ').map((word) => {
@@ -23,11 +25,13 @@ type Phase = 'visible' | 'vanishing' | 'hidden' | 'returning';
 export default function CreativeEntrance() {
   const [unlocked, setUnlocked] = useState(false);
   const [phase, setPhase] = useState<Phase>('visible');
+  const [inkFilling, setInkFilling] = useState(false);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
   const [discovered, setDiscovered] = useState(false);
   const leavingRef = useRef(false);
+  const inkFillTimer = useRef<number | null>(null);
   const transitionAbort = useRef<AbortController | null>(null);
   const transitionTimer = useRef<number | null>(null);
   const discoveryTimer = useRef<number | null>(null);
@@ -64,6 +68,20 @@ export default function CreativeEntrance() {
     const id = window.setTimeout(() => setPhase(next[phase]), timings[phase]);
     return () => window.clearTimeout(id);
   }, [phase, paused, reducedMotion]);
+
+  useEffect(() => {
+    if (phase === 'returning' && !reducedMotion) {
+      inkFillTimer.current = window.setTimeout(() => {
+        inkFillTimer.current = null;
+        setInkFilling(true);
+      }, HINT_REVEAL_DURATION_MS + INK_FILL_PAUSE_MS);
+    }
+    if (phase === 'vanishing' || reducedMotion) {
+      if (inkFillTimer.current !== null) window.clearTimeout(inkFillTimer.current);
+      inkFillTimer.current = null;
+      setInkFilling(false);
+    }
+  }, [phase, reducedMotion]);
 
   const unlock = useCallback(() => {
     setUnlocked(true);
@@ -116,6 +134,7 @@ export default function CreativeEntrance() {
   }, [enter]);
 
   useEffect(() => () => {
+    if (inkFillTimer.current !== null) window.clearTimeout(inkFillTimer.current);
     transitionAbort.current?.abort();
     if (transitionTimer.current !== null) window.clearTimeout(transitionTimer.current);
     if (discoveryTimer.current !== null) window.clearTimeout(discoveryTimer.current);
@@ -133,7 +152,7 @@ export default function CreativeEntrance() {
         ) : (
           <button
             type="button"
-            className={`secret-hint secret-hint--${discovered ? 'discovered' : reducedMotion ? 'visible' : phase}`}
+            className={`secret-hint secret-hint--${discovered ? 'discovered' : reducedMotion ? 'visible' : phase}${inkFilling ? ' secret-hint--ink-filling' : ''}`}
             disabled={!interactive || discovered}
             aria-hidden={!interactive || discovered}
             aria-label={HINT + ' Reveal the other portfolio.'}
